@@ -13,8 +13,8 @@ public class PrinterManager {
 
     public static void main(String[] args) {
         for (int i = 0; i < 15; i++) {
-            Printer printer = Printer.getInstance();
-            printer.print("Something to print.");
+            PrintingCenter printingCenter = PrintingCenter.getInstance();
+            printingCenter.print(i + ". Something to print.");
         }
     }
 

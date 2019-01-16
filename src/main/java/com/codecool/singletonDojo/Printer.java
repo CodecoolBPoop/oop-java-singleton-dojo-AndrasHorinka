@@ -4,11 +4,18 @@ import java.time.LocalTime;
 
 public class Printer {
 
-    private int id; // ID of the printer. Unique.
+    private int id = 1;
     private LocalTime busyEndTime;
+    private static Printer instance = null;
 
-    public Printer(int id) {
-        this.id = id;
+    private Printer() {
+    }
+
+    public static Printer getInstance() {
+        if (instance == null) {
+            instance = new Printer();
+        }
+        return instance;
     }
 
     // Prints out the given String
